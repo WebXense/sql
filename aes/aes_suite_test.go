@@ -9,5 +9,5 @@ import (
 
 func TestAesTest(t *testing.T) {
 	RegisterFailHandler(Fail)
-	RunSpecs(t, "AesTest Suite")
+	RunSpecs(t, "Aes Suite")
 }
