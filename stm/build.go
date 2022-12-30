@@ -13,6 +13,12 @@ func buildStatement(s *Statement, values []interface{}) (string, []interface{}) 
 		stm = s.Field + " " + s.Operator
 	case OP_NOT_NULL:
 		stm = s.Field + " " + s.Operator
+	case OP_IN:
+		stm = s.Field + " " + s.Operator + " (" + strings.TrimRight(strings.Repeat("?,", len(s.Value.([]interface{}))), ",") + ")"
+		values = append(values, s.Value.([]interface{})...)
+	case OP_NOT_IN:
+		stm = s.Field + " " + s.Operator + " (" + strings.TrimRight(strings.Repeat("?,", len(s.Value.([]interface{}))), ",") + ")"
+		values = append(values, s.Value.([]interface{})...)
 	case OP_BETWEEN:
 		cls := &Statement{
 			Operator: OP_AND,

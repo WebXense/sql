@@ -1,5 +1,7 @@
 package stm
 
+// Statement is a struct that represents a statement in a SQL query.
+// We do not use it directly.
 type Statement struct {
 	Operator string       `json:"operator"`
 	Field    string       `json:"field,omitempty"`
