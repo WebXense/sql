@@ -20,5 +20,5 @@ func mySQLBuildDNS(host, port, username, password, database string) string {
 }
 
 func sqliteInMemoryBuildDNS() string {
-	return "file::memory::?cache=shared"
+	return "file::memory:?cache=shared"
 }
