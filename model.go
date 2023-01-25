@@ -1,12 +1,11 @@
 package sql
 
 type Pagination struct {
-	Page  int   `json:"page" form:"page"`
-	Size  int   `json:"size" form:"size"`
-	Total int64 `json:"total"`
+	Page  int   `form:"page"`
+	Size  int   `form:"size"`
 }
 
 type Sort struct {
-	SortBy string `json:"sortBy" form:"sortBy"`
-	Asc    bool   `json:"asc" form:"asc"`
+	SortBy string `form:"sortBy"`
+	Asc    bool   `form:"asc"`
 }
